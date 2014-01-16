@@ -10,8 +10,8 @@ Calendar.prototype.deleteCalendar = function (calendarName, successCallback, err
   cordova.exec(successCallback, errorCallback, "Calendar", "deleteCalendar", [calendarName]);
 };
 
-Calendar.prototype.createEvent = function (title, location, notes, startDate, endDate, successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "Calendar", "createEvent", [title, location, notes, startDate.getTime(), endDate.getTime()]);
+Calendar.prototype.createEvent = function (title, location, notes, startDate, endDate, alarm, successCallback, errorCallback) {
+  cordova.exec(successCallback, errorCallback, "Calendar", "createEvent", [title, location, notes, startDate.getTime(), endDate.getTime(), alarm]);
 };
 
 Calendar.prototype.createEventInNamedCalendar = function (title, location, notes, startDate, endDate, calendarName, successCallback, errorCallback) {

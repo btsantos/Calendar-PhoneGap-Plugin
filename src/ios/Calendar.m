@@ -48,6 +48,7 @@
     NSString* message    = [command.arguments objectAtIndex:2];
     NSString *startDate  = [command.arguments objectAtIndex:3];
     NSString *endDate    = [command.arguments objectAtIndex:4];
+    NSInteger *alarm     = [command.arguments objectAtIndex:5];
     
     NSTimeInterval _startInterval = [startDate doubleValue] / 1000; // strip millis
     NSDate *myStartDate = [NSDate dateWithTimeIntervalSince1970:_startInterval];
@@ -70,7 +71,7 @@
     }
     myEvent.calendar = calendar;
     
-    EKAlarm *reminder = [EKAlarm alarmWithRelativeOffset:-2*60*60];
+    EKAlarm *reminder = [EKAlarm alarmWithRelativeOffset:alarm];
     
     [myEvent addAlarm:reminder];
     
